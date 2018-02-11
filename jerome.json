@@ -1,0 +1,95 @@
+{
+    "name": "jerome",
+    "description": "KernelChip Jerome TCP клиент",
+    "module": "kernelchip.js",
+    "single": 0,
+  
+    "params": [
+      {
+        "name": "host",
+        "note": "IP контроллера",
+        "type": "string",
+        "val": "192.168.0.101"
+      },
+      {
+        "name": "port",
+        "note": "Порт контроллера",
+        "type": "number",
+        "val": "2424"
+      },
+      {
+        "name": "pwd",
+        "note": "Пароль",
+        "type": "string",
+        "val": "Jerome"
+      },
+      {
+        "name": "setevton",
+        "note": "Система 'Сторож' для дискретных входов (EVT)",
+        "type": "cb",
+        "val": "1"
+      },
+      {
+        "name": "setdaton",
+        "note": "Сводные данные от контроллера каждую сек (DAT)",
+        "type": "cb",
+        "val": "1"
+      },
+      {
+        "name": "setdzgon",
+        "note": "Подавление дребезга для дискретных входов (DZG)",
+        "type": "cb",
+        "val": "1"
+      }
+    ],
+  
+    "chpattern": [
+      {
+        "name": "desc",
+        "note": "Type",
+        "type": "droplist",
+        "data": [
+          {
+            "id": "IN",
+            "name": "IN - Digital Input ",
+            "visible": "data.desc == 'IN'"
+          },
+          {
+            "id": "OUT",
+            "name": "OUT - Digital Output ",
+            "visible": "data.desc == 'IN'"
+          },
+          { "id": "ADC", "name": "ADC (АЦП)", "visible": "data.desc == 'ADC'" },
+          { "id": "PWM", "name": "PWM (ШИМ)", "visible": "data.desc == 'PWM'" },
+          {
+            "id": "IMPL",
+            "name": "IMPL (Счетчик)",
+            "visible": "data.desc == 'IMPL'"
+          }
+        ]
+      }
+    ],
+  
+    "genrules": {
+      "ADC": {
+        "type": "200",
+        "cl": "SensorA"
+      },
+      "PWM": {
+        "type": "520",
+        "cl": "ActorA"
+      },
+      "IN": {
+        "type": "100",
+        "cl": "SensorD"
+      },
+      "OUT": {
+        "type": "500",
+        "cl": "ActorD"
+      },
+      "IMPL": { "cl": "Meter" }
+    },
+  
+    "actions": [{}]
+  }
+  

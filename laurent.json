@@ -1,0 +1,105 @@
+{
+    "name": "laurent",
+    "description": "KernelChip Laurent-2 TCP клиент",
+    "module": "kernelchip.js",
+    "single": 0,
+  
+    "params": [
+      {
+        "name": "host",
+        "note": "IP контроллера",
+        "type": "string",
+        "val": "192.168.0.101"
+      },
+      {
+        "name": "port",
+        "note": "Порт контроллера",
+        "type": "number",
+        "val": "2424"
+      },
+      {
+        "name": "pwd",
+        "note": "Пароль",
+        "type": "string",
+        "val": "Jerome"
+      },
+      {
+        "name": "setevton",
+        "note": "Система 'Сторож' для дискретных входов (EVT)",
+        "type": "cb",
+        "val": "1"
+      },
+      {
+        "name": "setdaton",
+        "note": "Сводные данные от контроллера каждую сек (DAT)",
+        "type": "cb",
+        "val": "1"
+      },
+      {
+        "name": "setdzgon",
+        "note": "Подавление дребезга для дискретных входов (DZG)",
+        "type": "cb",
+        "val": "1"
+      }
+    ],
+  
+    "chpattern": [
+    ],
+    
+    "channels":[
+        {"id":"IN_1", "desc":"IN"},
+        {"id":"IN_2", "desc":"IN"},
+        {"id":"IN_3", "desc":"IN"},
+        {"id":"IN_4", "desc":"IN"},
+        {"id":"IN_5", "desc":"IN"},
+        {"id":"IN_6", "desc":"IN"},
+        {"id":"OUT_1", "desc":"OUT"},
+        {"id":"OUT_2", "desc":"OUT"},
+        {"id":"OUT_3", "desc":"OUT"},
+        {"id":"OUT_4", "desc":"OUT"},
+        {"id":"OUT_5", "desc":"OUT"},
+        {"id":"OUT_6", "desc":"OUT"},
+        {"id":"OUT_7", "desc":"OUT"},
+        {"id":"OUT_8", "desc":"OUT"},
+        {"id":"OUT_9", "desc":"OUT"},
+        {"id":"OUT_10", "desc":"OUT"},
+        {"id":"OUT_11", "desc":"OUT"},
+        {"id":"OUT_12", "desc":"OUT"},
+        {"id":"REL_1", "desc":"OUT"},
+        {"id":"REL_2", "desc":"OUT"},
+        {"id":"REL_3", "desc":"OUT"},
+        {"id":"REL_4", "desc":"OUT"},
+        {"id":"ADC_1", "desc":"ADC"},
+        {"id":"ADC_2", "desc":"ADC"},
+        {"id":"TMP", "desc":"TMP"},
+        {"id":"IMPL_1", "desc":"IMPL"},
+        {"id":"IMPL_2", "desc":"IMPL"},
+        {"id":"IMPL_3", "desc":"IMPL"},
+        {"id":"IMPL_4", "desc":"IMPL"}
+    ],
+
+
+    "genrules": {
+      "ADC": {
+        "type": "200",
+        "cl": "SensorA"
+      },
+      "PWM": {
+        "type": "520",
+        "cl": "ActorA"
+      },
+      "IN": {
+        "type": "100",
+        "cl": "SensorD"
+      },
+      "OUT": {
+        "type": "500",
+        "cl": "ActorD"
+      },
+      "IMPL": { "cl": "Meter" },
+      "TMP": { "cl": "SensorA" }
+    },
+  
+    "actions": [{}]
+  }
+  

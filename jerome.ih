@@ -1,0 +1,6 @@
+{
+    "id":"jerome",
+    "description":"KernelChip Jerome - TCP client",
+    "cross":true,
+	"version":"1.0.0"
+}

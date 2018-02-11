@@ -1,0 +1,6 @@
+{
+    "id":"laurent",
+    "description":"KernelChip Laurent - TCP client",
+    "cross":true,
+	"version":"1.0.0"
+}
