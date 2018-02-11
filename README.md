@@ -1,3 +1,1 @@
 # Plugin-KernelChip
-
-# Plugin-KernelChip

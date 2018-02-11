@@ -21,7 +21,7 @@
         "name": "pwd",
         "note": "Пароль",
         "type": "string",
-        "val": "Jerome"
+        "val": "Laurent"
       },
       {
         "name": "setevton",
