@@ -52,7 +52,10 @@ function checkResponse() {
 process.on("message", function(message) {
   if (!message) return;
   if (typeof message == "string") {
-    if (message == "SIGTERM") process.exit(0);
+    if (message == "SIGTERM"){
+        agent.stop();
+        process.exit();
+    }    
   }
   if (typeof message == "object" && message.type) {
     parseMessageFromServer(message);
