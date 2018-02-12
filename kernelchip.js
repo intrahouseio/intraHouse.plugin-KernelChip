@@ -26,7 +26,6 @@ function next() {
       break;
     case 1:
       // Подключение к контроллеру
-      logger.log("Plugin kind "+plugin.kind, "connect");
       agent.start(plugin, logger);
       setInterval(checkResponse, 1000);
       step = 2;
