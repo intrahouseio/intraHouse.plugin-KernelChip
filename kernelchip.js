@@ -87,6 +87,11 @@ function parseMessageFromServer(message) {
 // data = [{id:adr, command:on/off/set, value:1}]
 function doAct(data) {
   if (!data || !util.isArray(data) || data.length <= 0) return;
+  
+  if (step < 2) {
+    logger.log('Init operation. Skip command');
+    return;
+  }
 
   data.forEach(item => {
     if (item.id && item.command) {
