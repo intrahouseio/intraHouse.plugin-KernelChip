@@ -40,6 +40,8 @@
   "chpattern": [
     { "name": "desc", "note": "Type", "type": "string", "disabled": "desc" }
   ],
+  
+  "hardlevelprops":["desc"],
 
   "genrules": {
     "ADC": {
